@@ -25,12 +25,16 @@ class Country
     protected $id;
     
     /**
+     * 2 Character ISO Code
+     * 
      * @Column(name="iso_code", length="2", unique=true)
      */
     protected $isoCode;
 
     /**
-     * @Column(name="iso3_code", length="3")
+     * 3 Character ISO Code
+     * 
+     * @Column(name="iso3_code", length="3", nullable=true)
      */
     protected $iso3Code;
 
