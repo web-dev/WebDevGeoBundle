@@ -126,6 +126,11 @@ class Country
      */
     protected $neighbours;
 
+    /**
+     * @OneToMany(targetEntity="Locality", mappedBy="country")
+     */
+    protected $localities;
+
     //## GENERATED ##//
     public function __construct()
     {
@@ -520,5 +525,25 @@ class Country
     public function getNeighbours()
     {
         return $this->neighbours;
+    }
+
+    /**
+     * Add localities
+     *
+     * @param WebDev\GeoBundle\Entity\Locality $localities
+     */
+    public function addLocalities(\WebDev\GeoBundle\Entity\Locality $localities)
+    {
+        $this->localities[] = $localities;
+    }
+
+    /**
+     * Get localities
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getLocalities()
+    {
+        return $this->localities;
     }
 }

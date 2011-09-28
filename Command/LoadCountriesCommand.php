@@ -29,7 +29,7 @@ class LoadCountriesCommand
     {
         $em = $this->getContainer()->get('doctrine.orm.entity_manager');
 
-        $file = $input->getArgument('file') ?: realpath(sys_get_temp_dir().'/geonames.org-countryInfo.txt');
+        $file = $input->getArgument('file') ?: sys_get_temp_dir().'/geonames.org-countryInfo.txt';
 
         if($input->getOption('download') || !is_file($file))
         {

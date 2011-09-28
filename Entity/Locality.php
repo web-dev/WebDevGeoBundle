@@ -1,9 +1,12 @@
 <?php namespace WebDev\GeoBundle\Entity;
 
 use Doctrine\ORM\Mapping\Column;
+use Doctrine\ORM\Mapping\DiscriminatorColumn;
+use Doctrine\ORM\Mapping\DiscriminatorMap;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\GeneratedValue;
 use Doctrine\ORM\Mapping\Id;
+use Doctrine\ORM\Mapping\InheritanceType;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\JoinTable;
 use Doctrine\ORM\Mapping\ManyToMany;
@@ -15,9 +18,20 @@ use Doctrine\ORM\Mapping\Table;
 /**
  * @Entity
  * @Table(name="geo_locality")
+ * @InheritanceType("SINGLE_TABLE")
+ * @DiscriminatorColumn(name="type", type="string")
+ * @DiscriminatorMap({
+     "ADM1" = "SuperRegion",
+     "ADM2" = "Region",
+     "ADM3" = "SubRegion",
+     "ADM4" = "Location",
+     "ADMD" = "SubLocation",
+     "PPL"  = "Populus"})
  */
 class Locality
 {
+    public function __toString(){ return $this->getName(); }
+
     /**
      * @Id @GeneratedValue
      * @Column(type="integer")
@@ -81,6 +95,26 @@ class Locality
      * @Column(name="geonames_modification_date", type="datetime", nullable=true)
      */
     protected $geonamesModificationDate;
+
+    /**
+     * @Column(name="supregion_code")
+     */
+    protected $superRegionCode;
+
+    /**
+     * @Column(name="region_code")
+     */
+    protected $regionCode;
+
+    /**
+     * @Column(name="subregion_code")
+     */
+    protected $subRegionCode;
+
+    /**
+     * @Column(name="location_code")
+     */
+    protected $locationCode;
 
     //## GENERATED ##//
 
@@ -316,5 +350,85 @@ class Locality
     public function getAlternateCountries()
     {
         return $this->alternateCountries;
+    }
+
+    /**
+     * Set superRegionCode
+     *
+     * @param string $superRegionCode
+     */
+    public function setSuperRegionCode($superRegionCode)
+    {
+        $this->superRegionCode = $superRegionCode;
+    }
+
+    /**
+     * Get superRegionCode
+     *
+     * @return string 
+     */
+    public function getSuperRegionCode()
+    {
+        return $this->superRegionCode;
+    }
+
+    /**
+     * Set regionCode
+     *
+     * @param string $regionCode
+     */
+    public function setRegionCode($regionCode)
+    {
+        $this->regionCode = $regionCode;
+    }
+
+    /**
+     * Get regionCode
+     *
+     * @return string 
+     */
+    public function getRegionCode()
+    {
+        return $this->regionCode;
+    }
+
+    /**
+     * Set subRegionCode
+     *
+     * @param string $subRegionCode
+     */
+    public function setSubRegionCode($subRegionCode)
+    {
+        $this->subRegionCode = $subRegionCode;
+    }
+
+    /**
+     * Get subRegionCode
+     *
+     * @return string 
+     */
+    public function getSubRegionCode()
+    {
+        return $this->subRegionCode;
+    }
+
+    /**
+     * Set locationCode
+     *
+     * @param string $locationCode
+     */
+    public function setLocationCode($locationCode)
+    {
+        $this->locationCode = $locationCode;
+    }
+
+    /**
+     * Get locationCode
+     *
+     * @return string 
+     */
+    public function getLocationCode()
+    {
+        return $this->locationCode;
     }
 }
