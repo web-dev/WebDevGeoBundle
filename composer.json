@@ -2,6 +2,7 @@
     "name": "web-dev/geo-bundle",
     "type": "library",
     "description": "Brings tones of Geographical functionality to your SF2 application",
+    "license": "MIT",
     "keywords": ["geo"],
     "authors": [
         {
