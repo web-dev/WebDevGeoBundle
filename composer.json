@@ -13,8 +13,8 @@
         "symfony/framework-bundle": ">=2.0,<2.3-dev"
     },
     "autoload":     {
-        "psr-0": { "WebDev\\GeoBundle": "" }
+        "psr-0": { "WebDev\\Bundle\\GeoBundle": "" }
     },
-    "target-dir": "WebDev/GeoBundle"
+    "target-dir": "WebDev/Bundle/GeoBundle"
     
 }
