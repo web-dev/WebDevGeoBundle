@@ -23,18 +23,18 @@ class Country
      * @Column(type="integer")
      */
     protected $id;
-    
+
     /**
      * 2 Character ISO Code
-     * 
-     * @Column(name="iso_code", length="2", unique=true)
+     *
+     * @Column(name="iso_code", length=2, unique=true)
      */
     protected $isoCode;
 
     /**
      * 3 Character ISO Code
-     * 
-     * @Column(name="iso3_code", length="3", nullable=true)
+     *
+     * @Column(name="iso3_code", length=3, nullable=true)
      */
     protected $iso3Code;
 
@@ -113,11 +113,11 @@ class Country
      */
     protected $geoNameID;
 
-    /** 
+    /**
      * @Column(name="equivalent_fips_code")
      */
     protected $equivalentFipsCode;
-    
+
     /**
      * @ManyToMany(targetEntity="Country")
      * @JoinTable(name="country_neighbour",
@@ -136,11 +136,11 @@ class Country
     {
         $this->neighbours = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -160,7 +160,7 @@ class Country
     /**
      * Get isoCode
      *
-     * @return string 
+     * @return string
      */
     public function getIsoCode()
     {
@@ -180,7 +180,7 @@ class Country
     /**
      * Get iso3Code
      *
-     * @return string 
+     * @return string
      */
     public function getIso3Code()
     {
@@ -200,7 +200,7 @@ class Country
     /**
      * Get isoNumeric
      *
-     * @return integer 
+     * @return integer
      */
     public function getIsoNumeric()
     {
@@ -220,7 +220,7 @@ class Country
     /**
      * Get fipsCode
      *
-     * @return string 
+     * @return string
      */
     public function getFipsCode()
     {
@@ -240,7 +240,7 @@ class Country
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -260,7 +260,7 @@ class Country
     /**
      * Get capital
      *
-     * @return string 
+     * @return string
      */
     public function getCapital()
     {
@@ -280,7 +280,7 @@ class Country
     /**
      * Get area
      *
-     * @return integer 
+     * @return integer
      */
     public function getArea()
     {
@@ -300,7 +300,7 @@ class Country
     /**
      * Get population
      *
-     * @return string 
+     * @return string
      */
     public function getPopulation()
     {
@@ -320,7 +320,7 @@ class Country
     /**
      * Get continent
      *
-     * @return string 
+     * @return string
      */
     public function getContinent()
     {
@@ -340,7 +340,7 @@ class Country
     /**
      * Get topLevelDomain
      *
-     * @return string 
+     * @return string
      */
     public function getTopLevelDomain()
     {
@@ -360,7 +360,7 @@ class Country
     /**
      * Get currencyCode
      *
-     * @return string 
+     * @return string
      */
     public function getCurrencyCode()
     {
@@ -380,7 +380,7 @@ class Country
     /**
      * Get currencyName
      *
-     * @return string 
+     * @return string
      */
     public function getCurrencyName()
     {
@@ -400,7 +400,7 @@ class Country
     /**
      * Get phonePrefix
      *
-     * @return smallint 
+     * @return smallint
      */
     public function getPhonePrefix()
     {
@@ -420,7 +420,7 @@ class Country
     /**
      * Get postalCodeFormat
      *
-     * @return string 
+     * @return string
      */
     public function getPostalCodeFormat()
     {
@@ -440,7 +440,7 @@ class Country
     /**
      * Get postalCodeRegex
      *
-     * @return string 
+     * @return string
      */
     public function getPostalCodeRegex()
     {
@@ -460,7 +460,7 @@ class Country
     /**
      * Get languages
      *
-     * @return string 
+     * @return string
      */
     public function getLanguages()
     {
@@ -480,7 +480,7 @@ class Country
     /**
      * Get geoNameID
      *
-     * @return integer 
+     * @return integer
      */
     public function getGeoNameID()
     {
@@ -500,7 +500,7 @@ class Country
     /**
      * Get equivalentFipsCode
      *
-     * @return string 
+     * @return string
      */
     public function getEquivalentFipsCode()
     {
@@ -520,7 +520,7 @@ class Country
     /**
      * Get neighbours
      *
-     * @return Doctrine\Common\Collections\Collection 
+     * @return Doctrine\Common\Collections\Collection
      */
     public function getNeighbours()
     {
@@ -540,7 +540,7 @@ class Country
     /**
      * Get localities
      *
-     * @return Doctrine\Common\Collections\Collection 
+     * @return Doctrine\Common\Collections\Collection
      */
     public function getLocalities()
     {

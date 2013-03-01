@@ -1,0 +1,20 @@
+{
+    "name": "web-dev/geo-bundle",
+    "type": "library",
+    "description": "Brings tones of Geographical functionality to your SF2 application",
+    "keywords": ["geo"],
+    "authors": [
+        {
+            "name": "Josiah",
+            "email": "josiah@web-dev.com.au"
+        }
+    ],
+    "require": {        
+        "symfony/framework-bundle": ">=2.0,<2.3-dev"
+    },
+    "autoload":     {
+        "psr-0": { "WebDev\\GeoBundle": "" }
+    },
+    "target-dir": "WebDev/GeoBundle"
+    
+}
