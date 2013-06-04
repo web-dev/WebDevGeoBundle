@@ -1,3 +1,8 @@
+# NO LONGER MAINTAINED
+
+A new (much better) version of this bundle is available: https://github.com/Josiah/JJsGeonamesBundle
+
+
 # WebDev Geo Bundle
 
 Brings tones of Geographical functionality to your SF2 application.
